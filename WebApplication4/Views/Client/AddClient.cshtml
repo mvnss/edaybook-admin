@@ -1,0 +1,102 @@
+﻿@using WebApplication4.Models
+@model ClientModel
+@{
+    ViewBag.Title = "Add Client";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<br />
+<br />
+<br /><br /><br /><br />
+<h2>Add Client</h2>
+@using (Html.BeginForm("AddClient", "Client", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post))
+                    {
+<div class="row">
+    <table border="0" width="800px">
+        <tr>
+            <td class="control-label" width="300">Name</td>
+            <td width="500">Need to Know</td>
+        </tr>
+        <tr>
+            <td>
+                @Html.EditorFor(m => m.Firstname, new { @class = "form-control" })
+            </td>
+            <td rowspan="6">
+                @Html.TextAreaFor(m => m.Keyinfo, new { @class = "form-control" })
+            </td>
+        </tr>
+        <tr>
+            <td class="control-label">Address</td>
+        </tr>
+
+        <tr>
+            <td>
+                @Html.TextBoxFor(m => m.Address1, new { @class = "form-control" })
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.TextBoxFor(m => m.Address2, new { @class = "form-control" })
+            </td>
+        </tr>
+        <tr>
+            <td>Postcode</td>
+        </tr>
+        <tr>
+            <td> @Html.TextBoxFor(m => m.Postcode, new { @class = "form-control" })</td>
+
+        </tr>
+        <tr>
+            <td>Telephone</td>
+            <td>Add a Photo</td>
+        </tr>
+        <tr>
+          <td>  @Html.TextBoxFor(m => m.Telephone, new { @class = "form-control" })</td>
+            <td><input type="file" id="fileToUpload" name="file" /></td>
+
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+
+    </table>
+
+
+   
+
+
+
+
+
+    <table border="0" width="600px">
+
+        <tr>
+            <td class="control-label">Recent History</td>
+            <td style="width:60%">
+                @Html.TextAreaFor(m => m.Recenthistory)
+            </td>
+        </tr>
+        <tr>
+            <td class="control-label">Health History</td>
+            <td style="width:60%"> @Html.TextAreaFor(m => m.Healthhistory)</td>
+        </tr>
+        <tr>
+            <td class="control-label">Social History</td>
+            <td style="width:60%">  @Html.TextAreaFor(m => m.Socialhistory)</td>
+        </tr>
+        <tr>
+            <td class="control-label">Circle of support and Contacts</td>
+            <td style="width:60%">  @Html.TextAreaFor(m => m.Circlesupp)</td>
+        </tr>
+
+    </table>
+    <table>
+        <tr>
+            
+            <td><input type="submit" value="Save" class="btn btn-default" /></td>
+        </tr>
+    </table>
+</div>
+}

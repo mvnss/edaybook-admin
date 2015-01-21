@@ -27,8 +27,8 @@ namespace WebApplication4.Controllers
         public ActionResult Index(LoginViewModel Login)
         {
 
-            return RedirectToAction("Index", "Login");
-            //return RedirectToAction("Index", "Client");
+           // return RedirectToAction("Index", "Login");
+            return RedirectToAction("Index", "Client");
 
 
             //string authority = "";
